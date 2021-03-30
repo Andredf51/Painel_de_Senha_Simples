@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="utf-8">
+        <title>Senhas</title>
+
+        <style type="text/css">
+            .footer {
+                position:absolute;
+                bottom:0;
+                width:100%;
+                text-align: center;
+            }
+
+        </style>
+    </head>
+    <body>
+        <h1><center>Bem-vindo ao Sistema de Senhas</center></h1>
+        {% if perfis %}
+            <ul>
+                {% for perfil in perfis %}
+                    <li>
+                        <a href="/perfis_senhas/{{perfil.id}}">Senha: {{ perfil.senha }}</a> / Status: {{ perfil.Status.nome_status }}
+                    </li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>Nenhum Perfil encontrado</p>
+        {% endif %}
+
+    </body>
+    <footer class="footer">
+        <hr>
+        Desenvolvido por André Luiz
+    </footer>
+</html>
